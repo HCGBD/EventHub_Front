@@ -166,12 +166,7 @@ function HomePage () {
                       {event.images && event.images.length > 0 && (
                         <EventMiniCarousel
                           images={event.images.map(
-                            img =>
-                              `${IMAGE_BASE_URL}/${
-                                img.startsWith('uploads/')
-                                  ? img
-                                  : `uploads/${img}`
-                              }`
+img => img.startsWith('http') ? img : `${IMAGE_BASE_URL}/${img}`
                           )}
                         />
                       )}

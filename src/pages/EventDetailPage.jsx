@@ -116,7 +116,7 @@ function EventDetailPage () {
     );
   }
 
-  const imageUrls = event.images?.map(img => `${IMAGE_BASE_URL}/${img.startsWith('uploads/') ? img : `uploads/${img}`}`) || [];
+  const imageUrls = event.images?.map(img => img.startsWith('http') ? img : `${IMAGE_BASE_URL}/${img}`) || [];
 
   const isLoggedIn = isAuthenticated;
   const isParticipantRole = user?.role === 'participant';

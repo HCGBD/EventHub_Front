@@ -77,7 +77,7 @@ function LocationDetailPage () {
     );
   }
 
-  const imageUrls = location.images?.map(img => `${IMAGE_BASE_URL}/${img.startsWith('uploads/') ? img : `uploads/${img}`}`) || [];
+  const imageUrls = location.images?.map(img => img.startsWith('http') ? img : `${IMAGE_BASE_URL}/${img}`) || [];
 
   return (
     <div className='bg-gray-300/40 dark:bg-gray-950'>

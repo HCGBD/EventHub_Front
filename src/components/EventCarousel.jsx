@@ -60,7 +60,7 @@ const EventCarousel = () => {
             carouselImages.map((imageUrl, index) => (
               <CarouselItem key={index} className='  '>
                 <img
-                  src={`${IMAGE_BASE_URL}/${imageUrl}`}
+                  src={imageUrl.startsWith('http') ? imageUrl : `${IMAGE_BASE_URL}/${imageUrl}`}
                   alt={`Carrousel ${index + 1}`}
                   className='w-full  h-[513px] object-cover  '
                 />

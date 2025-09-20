@@ -242,9 +242,7 @@ function MyParticipatedEventsPage () {
                   <EventMiniCarousel
                     images={event.images.map(
                       img =>
-                        `${IMAGE_BASE_URL}${
-                          img.startsWith('uploads/') ? img : `uploads/${img}`
-                        }`
+                        img.startsWith('http') ? img : `${IMAGE_BASE_URL}/${img}`
                     )}
                   />
                 )}

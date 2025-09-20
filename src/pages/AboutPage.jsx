@@ -106,7 +106,7 @@ export default function AboutPage() {
         <div className="flex justify-center">
           <motion.div variants={itemVariants} className="max-w-md">
             <Card className="text-center p-6 bg-card shadow-xl rounded-lg">
-              <img src={`${IMAGE_BASE_URL}/${settings.founderImage}`} alt={settings.founderName} className="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-4 border-primary" />
+              <img src={settings.founderImage.startsWith('http') ? settings.founderImage : `${IMAGE_BASE_URL}/${settings.founderImage}`} alt={settings.founderName} className="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-4 border-primary" />
               <CardTitle className="text-2xl font-semibold mb-2">{settings.founderName}</CardTitle>
               <p className="mb-2">{settings.founderRole}</p>
               <CardContent className="p-0 text-gray-100">

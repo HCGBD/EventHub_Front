@@ -146,7 +146,7 @@ export default function PublicLocationsPage () {
             <motion.div key={location._id} variants={itemVariants}>
               <Card className='flex flex-col h-full p-0 overflow-hidden rounded-md shadow-lg shadow-gray-600 hover:shadow-2xl transition-shadow duration-300 bg-card'>
                 {location.images && location.images.length > 0 && (
-                  <EventMiniCarousel images={location.images.map(img => `${IMAGE_BASE_URL}/${img.startsWith('uploads/') ? img : `uploads/${img}`}`)} />
+                  <EventMiniCarousel images={location.images.map(img => img.startsWith('http') ? img : `${IMAGE_BASE_URL}/${img}`)} />
                 )}
                 <CardHeader className='flex-grow px-4 pt-4'>
                   <CardTitle className='text-lg font-bold'>

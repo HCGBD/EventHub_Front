@@ -350,7 +350,7 @@ export function LocationForm ({ initialData, onFormSuccess }) {
                           .map((imagePath, index) => (
                             <div key={imagePath} className='relative'>
                               <img
-                                src={`${IMAGE_BASE_URL}/${imagePath}`}
+                                src={imagePath.startsWith('http') ? imagePath : `${IMAGE_BASE_URL}/${imagePath}`}
                                 alt={`Image existante ${index + 1}`}
                                 className='w-full h-32 object-cover rounded-lg shadow-md'
                               />

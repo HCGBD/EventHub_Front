@@ -237,7 +237,7 @@ export default function PublicEventsPage () {
             <motion.div key={event._id} variants={itemVariants}>
               <Card className='flex flex-col h-full p-0 overflow-hidden rounded-md shadow-lg hover:shadow-2xl transition-shadow duration-300 bg-card borde-4'>
                 {event.images && event.images.length > 0 && (
-                  <EventMiniCarousel images={event.images.map(img => `${IMAGE_BASE_URL}/${img.startsWith('uploads/') ? img : `uploads/${img}`}`)} />
+                  <EventMiniCarousel images={event.images.map(img => img.startsWith('http') ? img : `${IMAGE_BASE_URL}/${img}`)} />
                 )}
                 <CardHeader className='flex-grow px-4 pt-4'>
                   <CardTitle className='text-lg font-bold'>

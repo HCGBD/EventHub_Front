@@ -3,7 +3,7 @@ import useAuthStore from '@/stores/authStore'
 import { refreshToken as refreshAuthToken } from '@/lib/api' // Renommer pour éviter la confusion
 
 const apiClient = axios.create({
-  baseURL: '/', // Utiliser des URL relatives pour passer par le proxy Vite
+  baseURL: import.meta.env.VITE_API_URL || '/'
   withCredentials: true // Autoriser l'envoi des cookies
 })
 

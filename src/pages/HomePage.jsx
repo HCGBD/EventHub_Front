@@ -19,7 +19,7 @@ import { Calendar, MapPin, Tag, ArrowRight, Loader2 } from 'lucide-react'
 import { ShimmeringText } from '@/components/ui/shadcn-io/shimmering-text'
 import { SplittingText } from '@/components/ui/shadcn-io/splitting-text'
 
-import { API_BASE_URL, IMAGE_BASE_URL } from '@/lib/config';
+import { API_BASE_URL, IMAGE_BASE_URL } from '@/lib/config'
 
 // Définition des variantes pour les animations
 const containerVariants = {
@@ -140,7 +140,7 @@ function HomePage () {
 
       <section className='py-12 md:py-20 bg-gray-100/10 dark:bg-gray-900/10'>
         <div className='container mx-auto px-6'>
-                    <div className='text-center mx-auto w-full mb-8 '>
+          <div className='text-center mx-auto w-full mb-8 '>
             <h2 className='text-3xl md:text-5xl font-extrabold text-gray-900 dark:text-white'>
               Découvrez nos Lieux
             </h2>
@@ -152,7 +152,6 @@ function HomePage () {
             whileInView='visible'
             viewport={{ once: true, amount: 0.5 }}
           >
-            
             {events.length > 0 ? (
               events.slice(0, 3).map(event => {
                 const isEventPublished = event.status === 'publie'
@@ -161,12 +160,13 @@ function HomePage () {
                 )
                 return (
                   <motion.div key={event._id} variants={itemVariants}>
-                    
                     <Card className='flex flex-col h-full p-0 overflow-hidden rounded-md shadow-gray-600 shadow hover:shadow-xl bg-[#11123a]/90 border-2'>
                       {event.images && event.images.length > 0 && (
                         <EventMiniCarousel
-                          images={event.images.map(
-img => img.startsWith('http') ? img : `${IMAGE_BASE_URL}/${img}`
+                          images={event.images.map(img =>
+                            img.startsWith('http')
+                              ? img
+                              : `${IMAGE_BASE_URL}/${img}`
                           )}
                         />
                       )}
@@ -338,13 +338,10 @@ img => img.startsWith('http') ? img : `${IMAGE_BASE_URL}/${img}`
                   <Card className='flex flex-col h-full p-0 overflow-hidden rounded-md shadow-gray-600 shadow hover:shadow-xl bg-[#11123a]/90'>
                     {location.images && location.images.length > 0 && (
                       <EventMiniCarousel
-                        images={location.images.map(
-                          img =>
-                            `${IMAGE_BASE_URL}/${
-                              img.startsWith('uploads/')
-                                ? img
-                                : `uploads/${img}`
-                            }`
+                        images={location.images.map(img =>
+                          img.startsWith('http')
+                            ? img
+                            : `${IMAGE_BASE_URL}/${img}`
                         )}
                       />
                     )}

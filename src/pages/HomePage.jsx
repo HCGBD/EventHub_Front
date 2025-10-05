@@ -142,7 +142,7 @@ function HomePage () {
         <div className='container mx-auto px-6'>
           <div className='text-center mx-auto w-full mb-8 '>
             <h2 className='text-3xl md:text-5xl font-extrabold text-gray-900 dark:text-white'>
-              Découvrez nos Lieux
+              Événements Récents 
             </h2>
           </div>
           <motion.div
